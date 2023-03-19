@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maum.ai platform</title>
+    
+    
+	<link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/aibuilder/css/all.css">
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/jquery-migrate-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/all-5.13.0.js" data-auto-replace-svg="nest"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/jsrender.min.js"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/common.js?ver=20220125074919727"></script>
+    <!-- 공통css 호출 -->
+    <link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/kr/css/maum_common.css?ver=20220125074919727">
+	<link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/kr/css/login_renew.css?ver=20220125074919727">
+	<link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/kr/css/user.css?ver=20220125074919727">
+    <!-- new css 부분 -->
+    <link rel="stylesheet" type="text/css" href="resource/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/font.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css"/>
+    
+</head>
+<body>
+    <!-- #wrap -->
+    <div id="wrap" class="maumUI top_banner visual_header maumOrchestraBuilder">
+        <div class="bg_aside" style="opacity: 0.7;"></div>
+        <form id="logout-form" action="/logout" method="POST" style="display:none;">
+            <input type="hidden" name="_csrf" value="ab9138d3-1026-451c-ab6c-dca4bf0f7d45">
+        </form>
+        <div class="maum_aside logged_in" style="display:none; width: 100%; overflow: hidden;">
+            <!-- .aside_top -->
+            <div class="aside_top">
+                    <a class="btn_sign login_pop_m" href="#none">로그인</a>
+            </div>
+            <!-- .aside_mid -->
+            <div class="aside_mid">
+                <ul class="m_nav">
+                    <li class="aiHuman">
+                        <h2><a href="#none" class="">AI Human</a></h2>
+                        <ul class="m_lst" style="display: none;">
+                            <li>
+                                <h3><a href="https://human.maum.ai/event/">인공인간 제작 의뢰</a></h3>
+                            </li>
+                            <li>
+                                <h3><a href="https://store.maum.ai/">인공인간 영상 제작</a></h3>
+                            </li>
+                            <li>
+                                <h3><a href="/home/estimate/krAhb2">인공인간 디바이스 구매</a></h3>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a href="https://fast-aicc.maum.ai/intro">AICC</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://edge.maum.ai/">SMART-X</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://minutes.maum.ai/">MAUM 회의록</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://maum.ai/home/krcloudApiServiceMain">CLOUD API</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://data.maum.ai/">MAUM DATA</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="/home/pricingPage?lang=ko">가격정책</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="#none" class="move_inquiry">문의하기</a></h2>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- //.aside_mid -->
+            <!-- .aside_btm -->
+            <div class="aside_btm">
+                <ul>
+                    <li class=""><span>한국어</span></li>
+                    <li class=""><span><a href="/?lang=en">English</a></span></li>
+                </ul>
+            </div>
+            <!-- //.aside_btm -->
+        </div>
+
+        <!-- #header -->
+        <div id="header">
+            <!-- .maum_sta -->
+            <div class="maum_sta">
+                <h1><a href="https://maum.ai/">maum.ai</a></h1>
+                <!-- .maum_gnb -->
+                <div class="maum_gnb">
+                    <ul class="nav">
+                        <li>
+                            <a href="http://maumacademy.maum.ai/" class="">아카데미</a>
+                        </li>
+                        <li>
+                            <a href="https://maum.ai/home/pricingPage?lang=ko" class="">가격정책</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //.maum_gnb -->
+                <!-- .maum_etc -->
+                <div class="maum_etc">
+                    <ul class="nav">
+                        <!-- 로그인X -->
+                        <li>
+                            <a class="btn_sign login_pop" href="#none">로그인</a>
+                        </li>
+                        <!-- //로그인X -->
+        
+                        <!-- 로그인O-->
+                        <li>
+                            <a class="btn_ico user" href="#none"><i class="fas fa-user-circle"></i><span>사용자</span></a>
+                            <div class="lstBox user">
+                                <ul class="lst">
+                                    <li class="userInfo">
+                                        <span class="thumb"><img src="https://maum.ai/aiaas/common/images/ico_user_g.svg" alt="사용자"></span>
+                                        <span class="txt">
+                                            <em class="userName">박선후</em>
+                                            <em class="loginID">csj@mindslab.ai</em>
+                                        </span>
+                                    </li>
+                                    <li><a href="/user/profileMain" target="_self" title="프로필">프로필</a></li>
+                                    <li><a href="/user/apiAccountMain" target="_self" title="API 정보">API 정보</a></li>
+                                    <li><a href="/user/paymentInfoMain" target="_self" title="결제정보">결제정보</a></li>
+                                    <li><a href="#none" onclick="document.getElementById('logout-form').submit();" title="로그아웃">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- //로그인O-->
+        
+                        <li>
+                            <a class="btn_ico lang" href="#none"><i class="fas fa-globe"></i><span>언어</span></a>
+                            <div class="lstBox language">
+                                <ul class="lst">
+                                    <li class="lang_li"><a href="#none">한국어</a></li>
+                                    <li class="lang_li"><a href="/?lang=en" target="_self" title="English">English</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="btn_ico app" href="#none"><span>웹 앱 및 서비스</span></a>
+                            <div class="appBox">
+                                <div class="tit">웹 앱 및 서비스</div>
+                                <ul class="lst">
+                                    <li>
+                                        <a href="/main/krMainHome" target="_blank" title="Cloud API">
+                                            <span class="ico"></span>
+                                            <em>Cloud API</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://builder.maum.ai/?lang=ko" target="_blank" title="AI Builder">
+                                            <span class="ico"></span>
+                                            <em>AI Builder</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://minutes.maum.ai/" target="_blank" title="maum 회의록">
+                                            <span class="ico"></span>
+                                            <em>maum 회의록</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://fast-aicc.maum.ai/login?lang=ko" target="_blank" title="FAST 대화형 AI">
+                                            <span class="ico"></span>
+                                            <em>FAST 대화형 AI</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ava.maum.ai/login" target="_blank">
+                                            <span class="ico"></span>
+                                            <em>AVA</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://edge.maum.ai/" target="_blank">
+                                            <span class="ico"></span>
+                                            <em>AI Edge</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://data.maum.ai/?lang=ko" target="_blank" title="maum DATA">
+                                            <span class="ico"></span>
+                                            <em>maum DATA</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/home/krEcomindsMain" target="_blank" title="eco MINDs">
+                                            <span class="ico"></span>
+                                            <em>eco MINDs</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://store.maum.ai" target="_blank" title="maum AI store">
+                                            <span class="ico"></span>
+                                            <em>maum AI store</em>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //.maum_etc -->
+                <a class="btn_maum_ham" href="#none">모바일 전체메뉴
+                    <span class="line_top"></span>
+                    <span class="line_mid"></span>
+                    <span class="line_btm"></span>
+                </a>
+            </div>
+            <!-- //.maum_sta -->
+            <!-- .svc_sta -->
+            <div class="svc_sta" style="display: none;">
+                <!-- svc_visual -->
+                <div class="svc_visual">
+                    <h3>AI Edge</h3>
+                    <p class="bg_img"><img src="https://maum.ai/aiaas/kr/images/img_visual01.png" alt="Edge AI 이미지"></p>
+                </div>
+                <!-- //svc_visual -->
+                <!-- .lnb -->
+                <div class="lnb">
+                    <h2>
+                        <a href="https://edge.maum.ai/" title="maum Edge" alt="AI Edge">AI Edge</a>
+                    </h2>
+
+                    <!-- [D] 로컬메뉴  -->
+                    <ul class="nav">
+                        <li><a class="active" href="#stn_overview">Overview</a></li>
+                        <li><a href="#stn_edgeDevice">Edge AI Device</a></li>
+                        <li><a href="#stn_edgeCloud">AI Computing Cloud</a></li>
+                        <li><a href="#stn_svcCase">고객 사례</a></li>
+                        <li><a href="#inquiry">문의하기</a></li>
+                    </ul>
+                </div>
+                <!-- //.lnb -->
+            </div>
+            <!-- //.svc_sta -->
+        </div>
+        <!-- //#header -->
+
+        <!-- #container -->
+        <div id="contents">
+            <div class="stn visual">
+                <div class="visual_text">
+                    <h2><img src="resource/img/img_aihumanorder.svg" alt="AI Human Order"></h2>
+                    <!-- <h3>“세상의 모든 <b>AI</b>는 <b>마음</b>으로 통한다.”</h3> -->
+                </div>
+            </div>
+            <div class="stn order_page">
+                <div class="order_cnt option">
+                    <div class="stn_main_tit">
+                        <h3>Make Your Own AI Human</h3>
+                        <p>당신이 원하는 인공인간을 만들어보세요.</p>
+                    </div>
+                    <div class="order_step_area">
+                        <div class="cont job active">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 1</span>
+                                    <strong>JOB</strong>
+                                </h2>
+                                <span>어떤 직업의 인공인간을 원하시나요?</span>
+                            </div>
+                            <div class="select_area">
+                                <div class="job_cnt">
+                                    <div class="box active imgSwiper">
+                                        <div class="swiper-container job01">
+                                            <ul class="swiper-wrapper">
+                                                <!-- [D] 22.01.18 ".swiper-slide"의 이미지는 추후에 수정/추가 예정입니다. -->
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent01.png" alt="도슨트">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent02.png" alt="도슨트">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent03.png" alt="도슨트">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent04.png" alt="도슨트">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>도슨트</strong>
+                                                <span>M1-Docent</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                관람객에게 작품 설명과 전시장 안내를 합니다.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>ToF Sensor (근접 센서)</p>
+                                                    <p>고객이 접근하면 근접 센서로 관람객을 인식하여 작품 및 작가에 관한 설명을 시작합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STT (음성 인식) & Touch Pad (터치 패드)</p>
+                                                    <p>화면 터치 또는 지향성 마이크를 통한 음성인식으로 관람객의 의도를 이해하고, 적절한 설명을 해줍니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STF (얼굴 재현) & TTS (음성 생성)</p>
+                                                    <p>STF (얼굴 재현)과 TTS (음성 생성)을 통해 도슨트의 표정과 말투를 그대로 재현합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>4K 화질</p>
+                                                    <p>4K 화질로 인공인간 도슨트를 구현하여 대형 키오스크에도 생생한 화면을 제공합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS (다국어 음성 변환)</p>
+                                                    <p>Multi-lingual TTS를 통해 도슨트의 목소리와 톤으로 영어, 일어, 중국어 등의 외국어를 발화
+                                                        합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Device</p>
+                                                    <p>스마트폰, 웹, 키오스크, 디지털 사이니지, 로봇 등 다양한 디바이스에 적용할 수 있습니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Chatbot</p>
+                                                    <p>작품 설명 이외에도 관람객의 질문 의도를 파악하여 관람객과의 자유 대화가 가능하고, 관리자가 지속적으로 학습시킬 수 있는 학습 도구가 제공됩니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>활용</p>
+                                                    <p>전시장, 박물관, 쇼룸 등의 도슨트, 가전 매장의 상품 안내원 등</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1docent.pdf" download="인공인간 도슨트 브로슈어" class="btn_download">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="다운로드">
+                                            <span>브로슈어 다운로드</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job02">
+                                            <ul class="swiper-wrapper">
+                                                <!-- [D] 22.01.18 ".swiper-slide"의 이미지는 추후에 수정/추가 예정입니다. -->
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_CS01.png" alt="고객상담원">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_CS02.png" alt="고객상담원">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_CS03.png" alt="고객상담원">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>고객상담원</strong>
+                                                <span>M1_Agent</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                콜센터 운영 비용 부담을 덜고, 고객과의 통화 내용을 관리합니다.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>상담 대화 모델 구축</p>
+                                                    <p>상담 고객의 의도를 파악하고 대화를 합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS (다언어 음성 변환)</p>
+                                                    <p>Multi-lingual TTS를 통해 상담사의 목소리와 톤으로 영어, 일어, 중국어 등의 외국어를 구사합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>음성봇</p>
+                                                    <p>완전 판매 모니터링, 대출 신청 등의 모니터링 업무를 대체하여 처리합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Chatbot</p>
+                                                    <p>고객의 질문 의도를 파악하여 고객과의 자유 대화가 가능하고, 관리자가 지속적으로 학습시킬 수 있는 학습도구가 제공됩니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>대화 관리</p>
+                                                    <p>대화 내용의 키워드 및 카테고리를 분석하여 대화 관리를 지원합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>상담 분석</p>
+                                                    <p>고객 인입 채널에 따른 VOC (Voice Of Customer)를 분석하여, QA 업무를 효율화하며 리스크를 관리합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>활용</p>
+                                                    <p>손해보험사 완전 판매 모니터링, 음성봇 서비스, 대기업 콜센터 등</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1agent.pdf" download="인공인간 고객상담원 브로슈어" class="btn_download">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="다운로드">
+                                            <span>브로슈어 다운로드</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job03">
+                                            <ul class="swiper-wrapper">
+                                                <!-- [D] 22.01.18 ".swiper-slide"의 이미지는 추후에 수정/추가 예정입니다. -->
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_shorthand01.png" alt="속기사">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_shorthand02.png" alt="속기사">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_shorthand03.png" alt="속기사">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>속기사</strong>
+                                                <span>M1_Minutes</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                여러 명의 화자를 정확히 분리하여 화자별 대화를 실시간으로 기록하고 공유합니다.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>Directional Microphone (지향성 마이크)</p>
+                                                    <p>지향성 마이크로 회의 참가자 별 음성인식과 화자 분리가 가능합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>CNN-STT 엔진</p>
+                                                    <p>CNN-STT 엔진을 적용하여 정형화되지 않은 긴 문장도 텍스트로 정확하게 변환합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>음향 삭제 레벨 (ADL) 기능</p>
+                                                    <p>음향 삭제 레벨 기능을 자체 개발하여 추가 학습 없이 86% 이상의 음성 인식률을 보입니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>실시간 회의 기록</p>
+                                                    <p>화자 별 발화 내용을 실시간으로 기록합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>영상 파일 업로드 기능</p>
+                                                    <p>음성 파일뿐만 아니라 영상 파일로도 음성을 추출하여 내용을 텍스트로 기록할 수 있습니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>All-in-One 시스템</p>
+                                                    <p>마이크와 서버가 결합되어 장소에 구애받지 않고 간편하게 설치 가능합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>활용</p>
+                                                    <p>정부 기관이나 기업의 회의록 작성, 법원의 속기록 등</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1minutes.pdf" download="인공인간 속기사 브로슈어" class="btn_download">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="다운로드">
+                                            <span>브로슈어 다운로드</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job04">
+                                            <ul class="swiper-wrapper">
+                                                <!-- [D] 22.01.18 ".swiper-slide"의 이미지는 추후에 수정/추가 예정입니다. -->
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard01.png" alt="경비원">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard02.png" alt="경비원">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard03.png" alt="경비원">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard04.png" alt="경비원">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>경비원</strong>
+                                                <span>M1_Cop</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                이상행동 식별 및 보이스피싱 예방 등 광범위한 보안 영역에 적용 가능합니다.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>Face Recognition (얼굴 인식) & Face Detection (얼굴 검출)</p>
+                                                    <p>아파트, 주택, 사무실 등 건물 및 시설물 방문자의 출입을 점검합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>이상 징후 솔루션</p>
+                                                    <p>배회, 침입, 실신 등의 이상 징후를 탐지하는 ‘이상행동 감지 솔루션’을 적용하여 이상 징후를
+                                                        식별합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>카메라 일체형 AI Box 솔루션</p>
+                                                    <p>일체형 HW 솔루션으로 Edge AI가 이상행동을 인식하여 사고 전조 단계에서의 빠른 대응이 가능합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>인식 결과 분석 서비스</p>
+                                                    <p>실시간으로 인식 결과를 정확하게 분석하고, 장비에 대한 상태 조회와 실시간 모니터링을 제공
+                                                        합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>활용</p>
+                                                    <p>아파트, 주택, 사무실 등 건물 보안, 금융권 보이스피싱 감지 등 보안 영역</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1cop.pdf" download="인공인간 경비원 브로슈어" class="btn_download">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="다운로드">
+                                            <span>브로슈어 다운로드</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job05">
+                                            <ul class="swiper-wrapper">
+                                                <!-- [D] 22.01.18 ".swiper-slide"의 이미지는 추후에 수정/추가 예정입니다. -->
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_announcer01.png" alt="아나운서">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_announcer02.png" alt="아나운서">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_announcer03.png" alt="아나운서">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>아나운서</strong>
+                                                <span>M1_Ann</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                아나운서의 목소리와 톤을 그대로 구현하고, 한국어 음운현상까지 완벽하게 구사합니다.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>STF (얼굴 재현) & TTS (음성 생성)</p>
+                                                    <p>STF (얼굴 재현)과 TTS (음성 생성)을 통해 아나운서의 표정과 말투를 그대로 재현합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>4K 화질</p>
+                                                    <p>4K 화질로 인공인간을 구현 가능하여 대형 키오스크에도 적용 가능합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS (다언어 음성 변환)</p>
+                                                    <p>Multi-lingual TTS를 통해 아나운서의 목소리와 톤으로 영어, 일어, 중국어 등의 외국어를 구사합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Device</p>
+                                                    <p>스마트폰, 웹, 키오스크, 디지털 사이니지, 로봇 등 다양한 디바이스에 적용할 수 있습니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>M Studio</p>
+                                                    <p>M studio를 통해 인공인간 아나운서를 사용 목적에 맞게 쉽게 편집할 수 있습니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>활용</p>
+                                                    <p>방송(기상 방송, 재난 방송, 뉴스 등), 광고 홍보 영상, 유튜브 영상 제작 등</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1ann.pdf" download="인공인간 아나운서 브로슈어" class="btn_download">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="다운로드">
+                                            <span>브로슈어 다운로드</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job06">
+                                            <ul class="swiper-wrapper">
+                                                <!-- [D] 22.01.18 ".swiper-slide"의 이미지는 추후에 수정/추가 예정입니다. -->
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist01.png" alt="리셉셔니스트">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist02.png" alt="리셉셔니스트">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist03.png" alt="리셉셔니스트">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist04.png" alt="리셉셔니스트">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>리셉셔니스트</strong>
+                                                <span>M1-Recept</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                방문객을 친절하게 응대하고, 원하는 업무를 볼 수 있도록 안내를 합니다.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>ToF Sensor (근접 센서)</p>
+                                                    <p>고객이 접근하면 근접 센서로 방문객을 인식하여 응대합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Thermal Imaging Camera (열화상 카메라)</p>
+                                                    <p>열화상 카메라로 방문 고객의 체온을 측정합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Facial Detecting Camera (안면 인식 카메라)</p>
+                                                    <p>안면 인식 카메라 (Facial Detecting Camera)로 직원과 방문 고객을 구분하고, 각각의 상황에 맞는 인사 와 안내를 합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STT (음성 인식) & Touch Pad (터치 패드)</p>
+                                                    <p>화면 터치 또는 지향성 마이크를 통한 음성인식으로 방문 고객의 의도를 정확히 파악하여 원하는 안내를 합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STF (얼굴 재현) & TTS (음성 생성)</p>
+                                                    <p>STF (얼굴 재현)과 TTS (음성 생성)을 통해 리셉셔니스트의 표정과 말투를 그대로 재현합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>4K 화질</p>
+                                                    <p>4K 화질로 인공인간 리셉셔니스트를 구현하여 대형 키오스크에서도 생생한 화면을 제공합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS (다국어 음성 변환)</p>
+                                                    <p>Multi-lingual TTS를 통해 리셉셔니스트의 목소리와 톤으로 영어, 일어, 중국어 등의 외국어를 발화합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Device</p>
+                                                    <p>스마트폰, 웹, 키오스크, 디지털 사이니지, 로봇 등 다양한 디바이스에 적용할 수 있습니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Chatbot</p>
+                                                    <p>방문객의 질문 의도를 파악하여 자유 대화가 가능하고, 관리자가 지속적으로 학습시킬 수 있는 학습 도구가 제공됩니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>활용</p>
+                                                    <p>기업, 호텔, 무인 상점 등</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1recept.pdf" download="인공인간 리셉셔니스트 브로슈어" class="btn_download">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="다운로드">
+                                            <span>브로슈어 다운로드</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job07">
+                                            <ul class="swiper-wrapper">
+                                                <!-- [D] 22.01.18 ".swiper-slide"의 이미지는 추후에 수정/추가 예정입니다. -->
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_banker01.png" alt="은행원">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_banker02.png" alt="은행원">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_banker03.png" alt="은행원">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>은행원</strong>
+                                                <span>M1-Banker</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                고객 응대 및 방문 목적을 파악하여 최적의 창구로 안내
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>4K 화질 구현</p>
+                                                    <p>인공인간을 4K 화질로 구현하여 고화질의 인공인간을 제공합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>체온 측정</p>
+                                                    <p>방문 고객의 체온 측정을 합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>고객 인식</p>
+                                                    <p>대기 상태에서는 광고 화면을 노출하며, 고객이 접근할 시 고객이 접근하면 인식합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>인사</p>
+                                                    <p>안면 인식 카메라를 통해 고객을 식별하고, 인사를 합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>대화 관리 및 의도 파악 (은행 업무)</p>
+                                                    <p>업무별 창구 안내와 번호표 발급을 제공합니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>정보 서비스 제공</p>
+                                                    <p>공공 API를 활용해 직원 호출, 환율 정보, 날씨 정보 등 다양한 정보 서비스를 제공합니다.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1banker.pdf" download="인공인간 은행원 브로슈어" class="btn_download">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="다운로드">
+                                            <span>브로슈어 다운로드</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-container jobList">
+                                    <ul class="job_cnt list swiper-wrapper">
+                                        <li class="active swiper-slide">
+                                            <input type="radio" class="btn_select" value="도슨트">
+                                            <img src="./resource/img/ico_docent.svg" alt="도슨트">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>도슨트</strong>
+                                                    <span>M1_Docent</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    관람객에게 작품 설명과 전시장 안내를 합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="고객상담원">
+                                            <img src="./resource/img/ico_CS.svg" alt="고객상담원">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>고객상담원</strong>
+                                                    <span>M1_Agent</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    콜센터 운영 비용 부담을 덜고, 고객과의 통화 내용을 관리합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="속기사">
+                                            <img src="./resource/img/ico_shorthand.svg" alt="속기사">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>속기사</strong>
+                                                    <span>M1_Minutes</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    여러 명의 화자를 정확히 분리하여 화자별 대화를 실시간으로 기록하고 공유합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="경비원">
+                                            <img src="./resource/img/ico_guard.svg" alt="경비원">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>경비원</strong>
+                                                    <span>M1_Cop</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    이상행동 식별 및 보이스피싱 예방 등 광범위한 보안 영역에 적용 가능합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="아나운서">
+                                            <img src="./resource/img/ico_announcer.svg" alt="아나운서">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>아나운서</strong>
+                                                    <span>M1_Ann</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    아나운서의 목소리와 톤을 그대로 구현하고, 한국어 음운현상까지 완벽하게 구사합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="리셉셔니스트">
+                                            <img src="./resource/img/ico_receptionist.svg" alt="리셉셔니스트">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>리셉셔니스트</strong>
+                                                    <span>M1-Recept</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    방문객을 친절하게 응대하고, 원하는 업무를 볼 수 있도록 안내를 합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="은행원">
+                                            <img src="./resource/img/ico_banker.svg" alt="은행원">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>은행원</strong>
+                                                    <span>M1-Banker</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    고객 응대 및 방문 목적을 파악하여 최적의 창구로 안내합니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="page"></div>
+                                </div>
+                            </div>
+                            <!-- [D] 22.01.18 ".btn_next" 버튼 클릭 시 해당 STEP의 선택사항의 value값이 우측 order summary에 출력되도록 해주세요. (하단의 .order_summary 클래스 영역 확인 부탁드립니다.) -->
+                            <button type="button" class="btn_next">STEP 1 완료</button>
+                        </div>
+                        <div class="cont who">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 2</span>
+                                    <strong>WHO</strong>
+                                </h2>
+                                <span>인공인간 모델을 골라보세요.</span>
+                            </div>
+                            <div class="select_area">
+                                <div class="who_cnt">
+                                    <div class="box active">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>활용 사례 미리 보기</span>
+                                        </button>
+                                        <img src="./resource/img/img_jeong.png" alt="정소라">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>정소라</p>
+                                                <p>Jeong Sora</p>
+                                            </div>
+                                            <ul>
+                                                <li>KBS 남북의창 리포터</li>
+                                                <li>SBS CNBC 전문가빅리그 앵커</li>
+                                                <li>산업통상자원부 무역위원회 주최 한류 지식재산권 심포지엄 진행</li>
+                                                <li>미래창조과학부 스마트시티 디자인 공모전 행사 진행</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>활용 사례 미리 보기</span>
+                                        </button>
+                                        <img src="./resource/img/img_you.png" alt="유승민">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>유승민</p>
+                                                <p>You Seungmin</p>
+                                            </div>
+                                            <ul>
+                                                <li>SK 사내방송 강의 MC</li>
+                                                <li>지역 방송 의정24 아나운서</li>
+                                                <li>딜라이브 패널</li>
+                                                <li>YTN 사이언스 MC 리포터 외 다수</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>활용 사례 미리 보기</span>
+                                        </button>
+                                        <img src="./resource/img/img_lee.png" alt="이창진">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>이창진</p>
+                                                <p>Lee Changjin</p>
+                                            </div>
+                                            <ul>
+                                                <li>SK그룹 사내방송</li>
+                                                <li>KBS 남북의 창</li>
+                                                <li>매일경제TV 아나운서</li>
+                                                <li>국제암정복 세미나 진행 외 다수</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>활용 사례 미리 보기</span>
+                                        </button>
+                                        <img src="./resource/img/img_song.png" alt="송지은">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>송지은</p>
+                                                <p>Song Jieun</p>
+                                            </div>
+                                            <ul>
+                                                <li>SK브로드밴드 뉴스 앵커</li>
+                                                <li>SK그룹 사내방송 아나운서</li>
+                                                <li>한화생명 사내방송 아나운서</li>
+                                                <li>힐스테이트 아파트 분양 홍보 진행 외 다수</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>활용 사례 미리 보기</span>
+                                        </button>
+                                        <img src="./resource/img/img_min.png" alt="민경수">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>민경수</p>
+                                                <p>Min Kyeongsu</p>
+                                            </div>
+                                            <ul>
+                                                <li>SPOTV 스포츠 캐스터</li>
+                                                <li>KBC 광주 민방 공채 MC</li>
+                                                <li>한국경제TV 증권방송 앵커</li>
+                                                <li>AIA생명 연도상 시상식 3년 연속 진행 외 다수</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>활용 사례 미리 보기</span>
+                                        </button>
+                                        <img src="./resource/img/img_park.png" alt="박철민">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>박철민</p>
+                                                <p>Park Cheolmin</p>
+                                            </div>
+                                            <ul>
+                                                <li>YTN SCIENCE 앵커</li>
+                                                <li>TBS 앵커 겸 기자</li>
+                                                <li>MBC 탤런트 6등급</li>
+                                                <li>국토교통부 포스트 코로나 콘퍼런스 외 다수</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>활용 사례 미리 보기</span>
+                                        </button>
+                                        <img src="./resource/img/img_yoon.png" alt="윤예성">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>윤예성</p>
+                                                <p>Yoon Yesung</p>
+                                            </div>
+                                            <ul>
+                                                <li>쿠시마크로비오틱제팬 레벨 1,2 수료</li>
+                                                <li>식생활교육활동가 양성과정 11기 수료</li>
+                                                <li>서울시 식생활교육 학부모 강사단 10기 양성과정 수료</li>
+                                                <li>현, 마크로비오틱 강사</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <img src="./resource/img/img_voice.png" alt="목소리 모델만">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>목소리 모델만 사용</p>
+                                                <p>Voice Model</p>
+                                            </div>
+                                            <ul>
+                                                <li>유명 스트리머, 아나운서, 캐릭터 목소리 등 다양한 콘텐츠에 알맞은 목소리만 사용가능합니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <img src="./resource/img/img_silhouette.png" alt="AI 휴먼 제작">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>AI 휴먼 제작</p>
+                                                <p>AI Human Order</p>
+                                            </div>
+                                            <ul>
+                                                <li>당신의 인공인간을 제작할 수 있습니다.</li>
+                                                <li>인공인간 교수, 인공인간 기상캐스터, 인공인간 아나운서, 인공인간 강사 등 다양한 직업군에 활용됩니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-container whoList">
+                                    <ul class="who_cnt list swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="정소라">
+                                            <img src="./resource/img/img_jeong_cir.png" alt="정소라" class="active">
+                                            <div class="hover">
+                                                <p>정소라</p>
+                                                <p>Jeong Sora</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="유승민">
+                                            <img src="./resource/img/img_you_cir.png" alt="유승민">
+                                            <div class="hover">
+                                                <p>유승민</p>
+                                                <p>You Seungmin</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="이창진">
+                                            <img src="./resource/img/img_lee_cir.png" alt="이창진">
+                                            <div class="hover">
+                                                <p>이창진</p>
+                                                <p>Lee Changjin</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="송지은">
+                                            <img src="./resource/img/img_song_cir.png" alt="송지은">
+                                            <div class="hover">
+                                                <p>송지은</p>
+                                                <p>Song Jieun</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="민경수">
+                                            <img src="./resource/img/img_min_cir.png" alt="민경수">
+                                            <div class="hover">
+                                                <p>민경수</p>
+                                                <p>Min Kyeongsu</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="박철민">
+                                            <img src="./resource/img/img_park_cir.png" alt="박철민">
+                                            <div class="hover">
+                                                <p>박철민</p>
+                                                <p>Park Cheolmin</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="윤예성">
+                                            <img src="./resource/img/img_yoon_cir.png" alt="윤예성">
+                                            <div class="hover">
+                                                <p>윤예성</p>
+                                                <p>Yoon Yesung</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="목소리 모델">
+                                            <img src="./resource/img/img_voice_cir.png" alt="목소리 모델">
+                                            <div class="hover">
+                                                <p>목소리 모델</p>
+                                                <p>Voice Model</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="AI 휴먼 제작">
+                                            <img src="./resource/img/img_silhouette_cir.png" alt="AI 휴먼 제작">
+                                            <div class="hover">
+                                                <p>AI 휴먼 제작</p>
+                                                <p>AI Human Order</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            <!-- [D] 22.01.18 ".btn_next" 버튼 클릭 시 해당 STEP의 선택사항의 value값이 우측 order summary에 출력되도록 해주세요. (하단의 .order_summary 클래스 영역 확인 부탁드립니다.) -->
+                            <button type="button" class="btn_next">STEP 2 완료</button>
+                        </div>
+                        <div class="cont work">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 3</span>
+                                    <strong>WORK</strong>
+                                </h2>
+                                <span>인공인간이 할 수 있는 기능을 선택하세요.</span>
+                            </div>
+                            <ul>
+                                <!-- [D] 22.01.18
+                                    클래스명 안내
+                                    선택 불가능 : ".disabled" 
+                                    선택 가능 : ".selectable"
+                                    선택 활성화 : ".active"
+                                    STEP1~2 선택 결과를 바탕으로 STEP3 항목 선택 가능여부에 따라 클래스명이 바뀌도록 해주세요.
+                                -->
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[고객 인식]">
+                                    고객 인식
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[음성 인식]">
+                                    음성 인식
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[음성 생성]">
+                                    음성 생성
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[상담]">
+                                    상담
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[인사]">
+                                    인사
+                                </li>
+                                <li class="selectable">
+                                    <input type="checkbox" class="btn_check" value="[대화 관리]">
+                                    대화 관리
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[출입 통제]">
+                                    출입 통제
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[체온 측정]">
+                                    체온 측정
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[직원 호출]">
+                                    직원 호출
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[회사 소개]">
+                                    회사 소개
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[편의시설 안내]">
+                                    편의시설 안내
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[상품 안내]">
+                                    상품 안내
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[위급상황 시 연락]">
+                                    위급상황 시 연락
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[은행업무 안내]">
+                                    은행 업무 안내
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[회의록 작성]">
+                                    회의록 작성
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[다국어 지원]">
+                                    다국어 지원
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[위급상황 인지]">
+                                    위급상황 인지
+                                </li>
+                            </ul>
+                            <!-- [D] 22.01.18 ".btn_next" 버튼 클릭 시 해당 STEP의 선택사항의 value값이 우측 order summary에 출력되도록 해주세요. (하단의 .order_summary 클래스 영역 확인 부탁드립니다.) -->
+                            <button type="button" class="btn_next">STEP 3 완료</button>
+                        </div>
+                        <div class="cont display">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 4</span>
+                                    <strong>DISPLAY</strong>
+                                </h2>
+                                <span>어디에서 보여주고 싶으신가요?</span>
+                            </div>
+                            <div class="swiper-container displayList">
+                                <ul class="swiper-wrapper">
+                                    <li class="active swiper-slide">
+                                        <input type="radio" class="btn_select" value='Kiosk 55"'>
+                                        <p>Kiosk 55"</p>
+                                        <img src="./resource/img/ico_kiosk.svg" alt="kiosk">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="Desktop">
+                                        <p>Desktop</p>
+                                        <img src="./resource/img/ico_desktop.svg" alt="desktop">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="Tablet">
+                                        <p>Tablet</p>
+                                        <img src="./resource/img/ico_tablet.svg" alt="Tablet">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="Web">
+                                        <p>Web</p>
+                                        <img src="./resource/img/ico_web.svg" alt="Web">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="App.">
+                                        <p>App.</p>
+                                        <img src="./resource/img/ico_app.svg" alt="App.">
+                                    </li>
+                                </ul>
+                                <div class="page"></div>
+                            </div>
+                            <!-- [D] 22.01.18 ".btn_next" 버튼 클릭 시 해당 STEP의 선택사항의 value값이 우측 order summary에 출력되도록 해주세요. (하단의 .order_summary 클래스 영역 확인 부탁드립니다.) -->
+                            <button type="button" class="btn_next">STEP 4 완료</button>
+                        </div>
+                        <div class="cont tools">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 5</span>
+                                    <strong>TOOLS</strong>
+                                </h2>
+                                <span>마인즈랩 인공인간의 다양한 기능을 만나보세요!</span>
+                            </div>
+                            <div class="swiper-container toolsList">
+                                <ul class="swiper-wrapper">
+                                    <!-- [D] 22.01.18
+                                        클래스명 안내
+                                        선택 불가능 : ".disabled" 
+                                        선택 가능 : ".selectable"
+                                        선택 활성화 : ".active"
+                                        STEP1~2 선택 결과를 바탕으로 STEP3 항목 선택 가능여부에 따라 클래스명이 바뀌도록 해주세요.
+                                    -->
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[챗봇 메이커]">
+                                        음성봇
+                                    </li>
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[Edge AI]">
+                                        TMQA
+                                    </li>
+                                    <li class="active swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[음성봇]">
+                                        챗봇 메이커
+                                    </li>
+                                    <li class="active swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[TMQA 별도문의]">
+                                        Edge AI
+                                    </li>
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[회의록 (On-device)]">
+                                        회의록<br>On-device
+                                    </li>
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[회의록 (클라우드)]">
+                                        회의록<br>On-promise
+                                    </li>
+                                    <li class="selectable swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[회의록 (On-promise) (별도문의)]">
+                                        Cloud 회의록
+                                    </li>
+                                </ul>
+                                <div class="page"></div>
+                            </div>
+                        </div>
+                        <a href="./resource/download/m1AIHuman.pdf" download="통합 브로슈어" class="btn_download all">
+                            <img src="./resource/img/ico_download_white_24px.svg" alt="다운로드">
+                            <span>통합 브로슈어 다운로드</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="order_cnt summary active">
+                    <button type="button" class="btn_close">
+                        <img src="./resource/img/ico_close.png" alt="창 닫기">
+                    </button>
+                    <div class="cont order_summary active">
+                        <div class="desc_area">
+                            <h3 class="desc_tit">STEP 1. Order Summary</h3>
+                            <p>당신만의 인공인간은 이렇게 만들어집니다.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>JOB</p>
+                                <div class="job">
+                                    <!-- [D] 22.01.18
+                                        step 완료 버튼 클릭 시 우측의 Order summary에 각 step별 선택한 항목이 <p>태그로 추가되게 해주세요.
+                                    -->
+                                    <!-- <P>도슨트</P> -->
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>WHO</p>
+                                <div class="who">
+                                    <!-- [D] 22.01.18
+                                        step 완료 버튼 클릭 시 우측의 Order summary에 각 step별 선택한 항목이 <p>태그로 추가되게 해주세요.
+                                    -->
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>WORK</p>
+                                <div class="work">
+                                    <!-- [D] 22.01.18
+                                        step 완료 버튼 클릭 시 우측의 Order summary에 각 step별 선택한 항목이 <p>태그로 추가되게 해주세요. 현재 임시로 구현하여 모든 항목이 출력되고 있습니다. 선택항목만 추가되게 작업 부탁드립니다.
+                                    -->
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>DISPLAY</p>
+                                <div class="display">
+                                    <!-- [D] 22.01.18
+                                        step 완료 버튼 클릭 시 우측의 Order summary에 각 step별 선택한 항목이 <p>태그로 추가되게 해주세요.
+                                    -->
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>TOOLS</p>
+                                <div class="tools">
+                                    <!-- [D] 22.01.18
+                                        복수선택이 가능한 영역이며, step완료 버튼이 없기 때문에 항목을 선택할 때마다 해당 내용 <p>태그가 추가되는 방식으로 해주세요.
+                                    -->
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>원</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn_order">위 내용으로 견적서 작성하기</button>
+                    </div>
+                    <div class="cont make_aiHuman">
+                        <button type="button" class="btn_back">
+                            <img src="./resource/img/ico_back.svg" alt="창 닫기">
+                        </button>
+                        <div class="estimate">
+                            <h3>STEP 2. 견적 요청</h3>
+                            <div class="estimate_table">
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>이름</b>(필수)
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="text" placeholder="이름을 입력해 주세요." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>연락처</b>(필수)
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="number" name="tel" class="mandantory" placeholder="‘-’없이 연락처를 입력해 주세요." title="연락처" maxlength="12" oninput="" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>이메일</b>(필수)
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="email" name="email" class="mandantory" placeholder="이메일 주소를 입력해 주세요." title="이메일" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>회사/소속</b>
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="text" placeholder="회사명이나 소속단체를 입력해주세요." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>연락 가능 시간대</b>
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="text" placeholder="ex)저녁7시 이후" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rd_area">
+                                <div class="rd_cont">
+                                    <input type="checkbox" id="chAgree" name="chAgreeBtn" value="chAgree" />
+                                    <label for="chAgree"><span>동의합니다.</span></label>
+                                </div>
+                                <div>
+                                    <p>수집하는 개인정보 항목 : 이름, 연락처<br>
+                                        작성해주시는 개인 정보는 문의 접수 및 고객 불만 해결을 위해 1년간 보관됩니다.<br>
+                                        본 동의를 거부할 수 있으나, 미동의 시 견적서 접수가 불가능합니다.</p>
+                                </div>
+                            </div>
+                            <!-- [D] 22.01.18 order_summary 선택항목을 다 선택했을때만 견적서 보내기가 가능하도록 해주세요. -->
+                            <button type="button" class="btn_order">견적 요청 보내기</button>
+                        </div>
+                    </div>
+                    <div class="float_area">
+                        <button type="button" class="btn_mail">
+                            <img src="./resource/img/ico_mail.svg" alt="mail">
+                        </button>
+                        <button type="button" class="btn_summary">
+                            <img src="./resource/img/ico_write.svg" alt="write">
+                        </button>
+                        <button type="button" class="btn_top">
+                            <img src="./resource/img/ico_top.svg" alt="top">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <!-- #footer -->
+        <div id="footerLanding" class="section" data-anchor="stn_footer">
+            <div class="ft_top">
+                <div class="footer_inner">
+                    <div class="col links fl">
+                        <a href="https://mindslab.ai:8080/kr/company" target="_blank">회사소개</a>
+                        <a href="https://maum.ai/home/krTermsMain" target="_blank">이용약관</a>
+                        <a href="https://maum.ai/home/krTermsMain#conditions" target="_blank">개인정보처리방침</a>
+                    </div>
+        
+                    <div class="col contact">
+                        <a href="tel:16613222">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_phone_20.svg" alt="전화 걸기">
+                            <span>1661-3222</span>
+                        </a>
+                        <br>
+                        <a href="mailto:hello@mindslab.ai">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_email_20.svg" alt="메일 보내기">
+                            <span>hello@mindslab.ai</span>
+                        </a>
+                    </div>
+        
+                    <div class="col sns fr">
+                        <a href="https://www.facebook.com/mindsinsight" target="_blank" title="페이스북 바로가기">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_facebook_40.svg" alt="페이스북 아이콘">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC8ocQaJFp-adzGtwcBuS3iQ?view_as=subscriber" target="_blank" title="유튜브 바로가기">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_youtube_40.svg" alt="유튜브 아이콘">
+                        </a>
+                        <a href="https://post.naver.com/my.nhn?memberNo=45704243" target="_blank" title="네이버 블로그 바로가기">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_blog_40.svg" alt="네이버블로그 아이콘">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft_btm">
+                <div class="footer_inner">
+                    <div class="col company fl">
+                        <address>
+                            <span>대표 유태준 |</span>
+                            <span>사업자 등록번호 314-86-55446 |</span>
+                            <span>통신판매업신고번호 2019-대전유성-0094</span><br>
+                            <span>(주) 마인즈랩 경기도 성남시 분당구 대왕판교로644번길 49 다산타워 6층</span><br>
+                            <span>상담시간 : 09:00 ~ 18:00 (점심시간 12:30 ~ 13:30)</span>
+                        </address>
+                        <p class="copyright">
+                            Copyright © 2022 MINDsLab. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //#footer -->
+        <!-- 동영상 모달 -->
+        <div class="video_area">
+            <div class="video_cnt">
+                <button type="button">
+                    <img src="./resource/img/ico_close_Bcircle.svg" alt="창 닫기">
+                </button>
+                <video autoplay controls muted playsinline></video>
+            </div>
+        </div>
+    </div>
+    <!-- //#wrap -->
+
+    <script type="text/javascript" src="resource/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="resource/js/jquery.easing.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script type="text/javascript" src="resource/js/common.js"></script>
+</body>
+</html>

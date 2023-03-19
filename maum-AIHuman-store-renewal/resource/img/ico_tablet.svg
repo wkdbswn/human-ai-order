@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_407" data-name="사각형 407" width="80" height="80" transform="translate(949 3279)" fill="#530e0e"/>
+    </clipPath>
+  </defs>
+  <g id="ico_tablet" transform="translate(-949 -3279)" clip-path="url(#clip-path)">
+    <path id="Icon_ionic-ios-tablet-portrait" data-name="Icon ionic-ios-tablet-portrait" d="M62.655,3.5a4.273,4.273,0,0,0-3.019-1.25H11.019A4.242,4.242,0,0,0,8,3.5H8A4.273,4.273,0,0,0,6.75,6.519V77.981A4.242,4.242,0,0,0,8,81H8a4.273,4.273,0,0,0,3.019,1.25h48.6A4.242,4.242,0,0,0,62.637,81h0a4.273,4.273,0,0,0,1.25-3.019V6.519A4.182,4.182,0,0,0,62.655,3.5Zm-27.4,1.733a1.25,1.25,0,1,1-1.25,1.25A1.266,1.266,0,0,1,35.256,5.233Zm.071,75.249a2.51,2.51,0,1,1,2.518-2.518A2.562,2.562,0,0,1,35.328,80.482Zm25.72-6.787H9.608V10.823h51.44Z" transform="translate(953.25 3276.75)" fill="#414853"/>
+  </g>
+</svg>

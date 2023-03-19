@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="67" viewBox="0 0 66 67">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="사각형_483" data-name="사각형 483" class="cls-1" transform="translate(.436 -.189)" d="M0 0h66v67H0z"/>
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <path id="사각형_484" data-name="사각형 484" class="cls-1" transform="translate(.362 .307)" d="M0 0h66v66H0z"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:#451010}.cls-3,.cls-5{fill:none;stroke-linecap:round;stroke-linejoin:round}.cls-3{stroke:#fff}.cls-5{stroke:#707070}
+        </style>
+    </defs>
+    <g id="ico_close" transform="translate(-.437 .189)" style="clip-path:url(#clip-path)">
+        <g id="그룹_367" data-name="그룹 367" transform="translate(25.281 25.281)">
+            <path id="패스_12546" data-name="패스 12546" class="cls-3" d="M0 24.462V0" transform="rotate(45 8.649 20.88)"/>
+            <path id="패스_12547" data-name="패스 12547" class="cls-3" d="M0 24.462V0" transform="rotate(135 5.067 12.231)"/>
+        </g>
+        <g id="ico_close-2" data-name="ico_close" transform="translate(-35.926 78.504)" style="clip-path:url(#clip-path-2)">
+            <g id="그룹_368" data-name="그룹 368" transform="translate(25.281 25.281)">
+                <path id="패스_12548" data-name="패스 12548" class="cls-5" d="M0 24.462V0" transform="rotate(45 8.649 20.88)"/>
+                <path id="패스_12549" data-name="패스 12549" class="cls-5" d="M0 24.462V0" transform="rotate(135 5.067 12.231)"/>
+            </g>
+        </g>
+    </g>
+</svg>

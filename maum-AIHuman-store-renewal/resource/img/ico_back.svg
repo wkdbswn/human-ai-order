@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #451010;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #707070;
+        stroke: #f4f6f8;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="사각형_470" data-name="사각형 470" class="cls-1" width="50" height="50" transform="translate(1600 1019)"/>
+    </clipPath>
+  </defs>
+  <g id="ico_back" class="cls-2" transform="translate(-1600 -1019)">
+    <path id="Icon_ionic-ios-arrow-round-back" data-name="Icon ionic-ios-arrow-round-back" class="cls-3" d="M16.03,11.539a1.021,1.021,0,0,1,.008,1.437L11.3,17.734H29.365a1.016,1.016,0,0,1,0,2.031H11.3l4.75,4.757a1.028,1.028,0,0,1-.008,1.437,1.011,1.011,0,0,1-1.43-.008L8.171,19.468h0a1.14,1.14,0,0,1-.211-.32.969.969,0,0,1-.078-.391,1.018,1.018,0,0,1,.289-.711l6.437-6.484A1,1,0,0,1,16.03,11.539Z" transform="translate(1605.873 1025.248)"/>
+  </g>
+</svg>

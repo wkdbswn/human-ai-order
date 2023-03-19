@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="사각형_451" data-name="사각형 451" transform="translate(1876 3378)" style="fill:#451010" d="M0 0h29v29H0z"/>
+        </clipPath>
+        <style>
+            .cls-3{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="ico_top" transform="translate(-1876 -3378)" style="clip-path:url(#clip-path)">
+        <g id="Icon_feather-arrow-up" data-name="Icon feather-arrow-up" transform="translate(1872.5 3374.5)">
+            <path id="패스_12526" data-name="패스 12526" class="cls-3" d="M7.5 18 18 7.5 28.5 18"/>
+            <path id="패스_12527" data-name="패스 12527" class="cls-3" d="M18 28.5v-21"/>
+        </g>
+    </g>
+</svg>

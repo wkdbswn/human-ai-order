@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maum.ai platform</title>
+    
+    
+	<link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/aibuilder/css/all.css">
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/jquery-migrate-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/all-5.13.0.js" data-auto-replace-svg="nest"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/jsrender.min.js"></script>
+	<script type="text/javascript" src="https://maum.ai/aiaas/kr/js/common.js?ver=20220125074919727"></script>
+    <!-- 공통css 호출 -->
+    <link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/kr/css/maum_common.css?ver=20220125074919727">
+	<link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/kr/css/login_renew.css?ver=20220125074919727">
+	<link rel="stylesheet" type="text/css" href="https://maum.ai/aiaas/kr/css/user.css?ver=20220125074919727">
+    <!-- new css 부분 -->
+    <link rel="stylesheet" type="text/css" href="resource/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/font.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css"/>
+    
+</head>
+<body>
+    <!-- #wrap -->
+    <div id="wrap" class="maumUI top_banner visual_header maumOrchestraBuilder eng_page">
+        <div class="bg_aside" style="opacity: 0.7;"></div>
+        <form id="logout-form" action="/logout" method="POST" style="display:none;">
+            <input type="hidden" name="_csrf" value="ab9138d3-1026-451c-ab6c-dca4bf0f7d45">
+        </form>
+        <div class="maum_aside logged_in" style="display:none; width: 100%; overflow: hidden;">
+            <!-- .aside_top -->
+            <div class="aside_top">
+                    <a class="btn_sign login_pop_m" href="#none">Sign in</a>
+            </div>
+            <!-- .aside_mid -->
+            <div class="aside_mid">
+                <ul class="m_nav">
+                    <li class="aiHuman">
+                        <h2><a href="#none" class="">AI Human</a></h2>
+                        <ul class="m_lst" style="display: none;">
+                            <li>
+                                <h3><a href="https://human.maum.ai/event/">인공인간 제작 의뢰</a></h3>
+                            </li>
+                            <li>
+                                <h3><a href="https://store.maum.ai/">인공인간 영상 제작</a></h3>
+                            </li>
+                            <li>
+                                <h3><a href="/home/estimate/krAhb2">인공인간 디바이스 구매</a></h3>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a href="https://fast-aicc.maum.ai/intro">AICC</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://edge.maum.ai/">SMART-X</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://minutes.maum.ai/">MAUM MINUTES</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://maum.ai/home/krcloudApiServiceMain">CLOUD API</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="https://data.maum.ai/">MAUM DATA</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="/home/pricingPage?lang=en">Pricing</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="#none" class="move_inquiry">Contact Us</a></h2>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- //.aside_mid -->
+            <!-- .aside_btm -->
+            <div class="aside_btm">
+                <ul>
+                    <li class=""><span>Korean</span></li>
+                    <li class=""><span><a href="/?lang=en">English</a></span></li>
+                </ul>
+            </div>
+            <!-- //.aside_btm -->
+        </div>
+
+        <!-- #header -->
+        <div id="header">
+            <!-- .maum_sta -->
+            <div class="maum_sta">
+                <h1><a href="https://maum.ai/">maum.ai</a></h1>
+                <!-- .maum_gnb -->
+                <div class="maum_gnb">
+                    <ul class="nav">
+                        <li>
+                            <a href="https://maum.ai/home/pricingPage?lang=en" class="">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //.maum_gnb -->
+                <!-- .maum_etc -->
+                <div class="maum_etc">
+                    <ul class="nav">
+                        <!-- 로그인X -->
+                        <li>
+                            <a class="btn_sign login_pop" href="#none">Sign in</a>
+                        </li>
+                        <!-- //로그인X -->
+        
+                        <!-- 로그인O-->
+                        <li>
+                            <a class="btn_ico user" href="#none"><i class="fas fa-user-circle"></i><span>사용자</span></a>
+                            <div class="lstBox user">
+                                <ul class="lst">
+                                    <li class="userInfo">
+                                        <span class="thumb"><img src="https://maum.ai/aiaas/common/images/ico_user_g.svg" alt="사용자"></span>
+                                        <span class="txt">
+                                            <em class="userName">Seonhu Park</em>
+                                            <em class="loginID">csj@mindslab.ai</em>
+                                        </span>
+                                    </li>
+                                    <li><a href="/user/profileMain" target="_self" title="프로필">Profile</a></li>
+                                    <li><a href="/user/apiAccountMain" target="_self" title="API 정보">API information</a></li>
+                                    <li><a href="/user/paymentInfoMain" target="_self" title="결제정보">결제정보</a></li>
+                                    <li><a href="#none" onclick="document.getElementById('logout-form').submit();" title="로그아웃">Log out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- //로그인O-->
+        
+                        <li>
+                            <a class="btn_ico lang" href="#none"><i class="fas fa-globe"></i><span>Language</span></a>
+                            <div class="lstBox language">
+                                <ul class="lst">
+                                    <li class="lang_li"><a href="#none">Korean</a></li>
+                                    <li class="lang_li"><a href="/?lang=en" target="_self" title="English">English</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="btn_ico app" href="#none"><span>Web apps and services</span></a>
+                            <div class="appBox">
+                                <div class="tit">Web apps and services</div>
+                                <ul class="lst">
+                                    <li>
+                                        <a href="/main/krMainHome" target="_blank" title="Cloud API">
+                                            <span class="ico"></span>
+                                            <em>Cloud API</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://builder.maum.ai/?lang=ko" target="_blank" title="AI Builder">
+                                            <span class="ico"></span>
+                                            <em>AI Builder</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://minutes.maum.ai/" target="_blank" title="maum minutes">
+                                            <span class="ico"></span>
+                                            <em>maum minutes</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://fast-aicc.maum.ai/login?lang=ko" target="_blank" title="FAST AI">
+                                            <span class="ico"></span>
+                                            <em>FAST AI</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ava.maum.ai/login" target="_blank">
+                                            <span class="ico"></span>
+                                            <em>AVA</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://edge.maum.ai/" target="_blank">
+                                            <span class="ico"></span>
+                                            <em>AI Edge</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://data.maum.ai/?lang=ko" target="_blank" title="maum DATA">
+                                            <span class="ico"></span>
+                                            <em>maum DATA</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/home/krEcomindsMain" target="_blank" title="eco MINDs">
+                                            <span class="ico"></span>
+                                            <em>eco MINDs</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://store.maum.ai" target="_blank" title="maum AI store">
+                                            <span class="ico"></span>
+                                            <em>maum AI store</em>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //.maum_etc -->
+                <a class="btn_maum_ham" href="#none">모바일 전체메뉴
+                    <span class="line_top"></span>
+                    <span class="line_mid"></span>
+                    <span class="line_btm"></span>
+                </a>
+            </div>
+            <!-- //.maum_sta -->
+            <!-- .svc_sta -->
+            <div class="svc_sta" style="display: none;">
+                <!-- svc_visual -->
+                <div class="svc_visual">
+                    <h3>AI Edge</h3>
+                    <p class="bg_img"><img src="https://maum.ai/aiaas/kr/images/img_visual01.png" alt="Edge AI images"></p>
+                </div>
+                <!-- //svc_visual -->
+                <!-- .lnb -->
+                <div class="lnb">
+                    <h2>
+                        <a href="https://edge.maum.ai/" title="maum Edge" alt="AI Edge">AI Edge</a>
+                    </h2>
+
+                    <!-- [D] 로컬메뉴  -->
+                    <ul class="nav">
+                        <li><a class="active" href="#stn_overview">Overview</a></li>
+                        <li><a href="#stn_edgeDevice">Edge AI Device</a></li>
+                        <li><a href="#stn_edgeCloud">AI Computing Cloud</a></li>
+                        <li><a href="#stn_svcCase">고객 사례</a></li>
+                        <li><a href="#inquiry">문의하기</a></li>
+                    </ul>
+                </div>
+                <!-- //.lnb -->
+            </div>
+            <!-- //.svc_sta -->
+        </div>
+        <!-- //#header -->
+
+        <!-- #container -->
+        <div id="contents">
+            <div class="stn visual">
+                <div class="visual_text">
+                    <h2><img src="resource/img/img_aihumanorder.svg" alt="AI Human Order"></h2>
+                    <!-- <h3>“세상의 모든 <b>AI</b>는 <b>마음</b>으로 통한다.”</h3> -->
+                    <!-- [D] <h3> tag 삭제되었습니다. -->
+                </div>
+            </div>
+            <div class="stn order_page">
+                <div class="order_cnt option">
+                    <div class="stn_main_tit">
+                        <h3>Make Your Own AI Human</h3>
+                        <p>Build your own AI Human.</p>
+                    </div>
+                    <div class="order_step_area">
+                        <div class="cont job active">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 1</span>
+                                    <strong>JOB</strong>
+                                </h2>
+                                <span>What type of profession do you desire from your AI Human?</span>
+                            </div>
+                            <div class="select_area">
+                                <div class="job_cnt">
+                                    <div class="box active imgSwiper">
+                                        <div class="swiper-container job01">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent01.png" alt="Docent">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent02.png" alt="Docent">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent03.png" alt="Docent">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_docent04.png" alt="Docent">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>Docent</strong>
+                                                <span>M1-Docent</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                It curates to explain art works and guide exhibition hall to visitors.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>ToF Sensor (Close sensor)</p>
+                                                    <p>The sensor recognizes visitors when they come close and begins curating about art works and artists.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STT (speech recognition) & Touch Pad (Touch Pad)</p>
+                                                    <p>Understands intentions of visitors through their screen touch and microphone, then provides curations.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STF (face reproduction) & TTS (voice generation)</p>
+                                                    <p>It provides vivid facial expressions and accents of a docent through STF and TTS.</p>
+                                                </li>
+                                                <li>
+                                                    <p>4K resolution</p>
+                                                    <p>With 4K resolution, it provides high quality resolution of AI human docent to a big-sized screen kiosk.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS</p>
+                                                    <p>With Multi-lingual TTS, it provides a same tone of voice of docent in foreign languages, such as English, Japanese, and Chinese.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Device</p>
+                                                    <p>It can be applied to multiple devices such as smartphone, website, kiosk, digital signage, and robot.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Chatbot</p>
+                                                    <p>Besides the curation, it is capable of free talking with visitors through understanding their intentions from a question and a learning tool will be provided for manager to control continuous learning of the machine. </p>
+                                                </li>
+                                                <li>
+                                                    <p>Usage</p>
+                                                    <p>Docent for exhibition hall, museum, and showroom. Guide at the home electronics shop.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1docent.pdf" download="AI Docent brochure" class="btn_download eng">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="Download">
+                                            <span>Download brochure</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job02">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_CS01.png" alt="Customer Service Agent">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_CS02.png" alt="Customer Service Agent">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_CS03.png" alt="Customer Service Agent">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>Customer Service Agent</strong>
+                                                <span>M1_Agent</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                It reduces costs of running call center and manages a content of customer calls.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>Build a model for customer calls</p>
+                                                    <p>It understands an intention of customer and proceeds a conversation.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS</p>
+                                                    <p>Through multi-lingual TTS, it provides foreign language with the voice of AI agent in English, Japanese, Chinese, and etc. </p>
+                                                </li>
+                                                <li>
+                                                    <p>VoiceBot</p>
+                                                    <p>It replaces tasks such as monitoring of complete sales and loan application.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Chatbot</p>
+                                                    <p>it is capable of free talking with visitors through understanding their intentions from a question and a learning tool will be provided for manager to control continuous learning of the machine. </p>
+                                                </li>
+                                                <li>
+                                                    <p>Conversation management</p>
+                                                    <p>It supports conversation management by analyzing keywords and category from contents of conversation.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Counseling Analysis</p>
+                                                    <p>Analyze VOC (Voice Of Customer) according to customer acquisition channels to streamline QA work and manage risks.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Usage</p>
+                                                    <p>Monitoring of complete sales of insurance company, VoiceBot service, call center in a major company.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1agent.pdf" download="AI Customer Service Agent brochure" class="btn_download eng">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="Download">
+                                            <span>Download brochure</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job03">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_shorthand01.png" alt="Stenographer">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_shorthand02.png" alt="Stenographer">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_shorthand03.png" alt="Stenographer">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>Stenographer</strong>
+                                                <span>M1_Minutes</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                It precisely separates multiple speakers to record and share speeches of each person in a real-time.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>Directional Microphone</p>
+                                                    <p>Directional microphone enables voice recognition and separation of speakers in a meeting. </p>
+                                                </li>
+                                                <li>
+                                                    <p>CNN-STT engine</p>
+                                                    <p>With the application of ANN-STT engine, unstable long sentence also can be transferred into the text.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Audio Delete Level Function (ADL)</p>
+                                                    <p>Organically developed ADL function provides 86% of voice recognition without any additional learning process.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Real-time meeting recording</p>
+                                                    <p>It records individual speaker’s speech in a real-time.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Video file uploading function.</p>
+                                                    <p>It also can recognize voice from a video file to product texts.</p>
+                                                </li>
+                                                <li>
+                                                    <p>All-in-One system</p>
+                                                    <p>Mic and the server are combined to be conveniently installed in any space.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Usage</p>
+                                                    <p>Produce meeting log for government organizations and firms, stenographic records at the court.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1minutes.pdf" download="AI Stenographer brochure" class="btn_download eng">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="Download">
+                                            <span>Download brochure</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job04">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard01.png" alt="Security guard">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard02.png" alt="Security guard">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard03.png" alt="Security guard">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_guard04.png" alt="Security guard">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>Security guard</strong>
+                                                <span>M1_Cop</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                It identifies abnormal activities and prevents voice phishing. It is capable to be applied to overall security field. 
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>Face Recognition & Face Detection</p>
+                                                    <p>It checks the entrance of a visitor to a facility including apartment, house, and office building.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Abnormal indication solution</p>
+                                                    <p>It identifies abnormal indication through the solution that detects loitering, invasion, and faint.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Camera adopted AI Box solution</p>
+                                                    <p>The unilateral HW solution enables Edge AI to recognize abnormal activities so that a rapid response against an accident is capable at the early stage.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Analytic service on results of recognition</p>
+                                                    <p>It precisely analyzes recognition results in a real-time, and provides a real-time monitoring and checking of equipment status.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Usage</p>
+                                                    <p>Security area including apartment, house, office building, and detecting voice phishing</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1cop.pdf" download="AI Security guard brochure" class="btn_download eng">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="Download">
+                                            <span>Download brochure</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job05">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_announcer01.png" alt="Announcer">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_announcer02.png" alt="Announcer">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_announcer03.png" alt="Announcer">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>Announcer</strong>
+                                                <span>M1_Ann</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                It replicates voice and tones of announcer and speaks perfect phonological phenomenon of Korean.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>STF (face reproduction) & TTS (voice generation)</p>
+                                                    <p>It replicates facial expressions and accents of announcer through STF and TTS</p>
+                                                </li>
+                                                <li>
+                                                    <p>4K resolution</p>
+                                                    <p>With 4K resolution, it provides high quality resolution of AI human to a big-sized screen kiosk.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS</p>
+                                                    <p>With Multi-lingual TTS, it provides a same tone of voice of docent in foreign languages, such as English, Japanese, and Chinese.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Device</p>
+                                                    <p>It can be applied to multiple devices such as smartphone, website, kiosk, digital signage, and robot.</p>
+                                                </li>
+                                                <li>
+                                                    <p>M Studio</p>
+                                                    <p>AI Human announcer can be easily customized in accordance with a desired purpose through the M studio.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Usage</p>
+                                                    <p>Create broadcasting (weather case, disaster, and news), advertising and Youtube video.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1ann.pdf" download="AI Announcer brochure" class="btn_download eng">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="Download">
+                                            <span>Download brochure</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job06">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist01.png" alt="Receptionist">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist02.png" alt="Receptionist">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist03.png" alt="Receptionist">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_receptionist04.png" alt="Receptionist">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>Receptionist</strong>
+                                                <span>M1-Recept</span>
+                                            </div>
+                                            <p class="desc_sub_tit">
+                                                It greets visitors and provides guidance for them to do their works.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>ToF Sensor (Close sensor)</p>
+                                                    <p>It recognizes visitor with its close sensor and responds to them.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Thermal Imaging Camera</p>
+                                                    <p>It checks customer’s body temperature with thermal imaging camera.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Facial Detecting Camera</p>
+                                                    <p>It recognizes staffs and customers with facial detecting camera and provides appropriate response reactions.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STT (speech recognition) & Touch Pad</p>
+                                                    <p>Understands intentions of visitors through their screen touch and microphone, then provides curations.</p>
+                                                </li>
+                                                <li>
+                                                    <p>STF (face reproduction) & TTS (voice generation)</p>
+                                                    <p>It provides vivid facial expressions and accents of a receptionist through STF and TTS</p>
+                                                </li>
+                                                <li>
+                                                    <p>4K resolution</p>
+                                                    <p>With 4K resolution, it provides high quality resolution of AI human receptionist to a big-sized screen kiosk.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Multi-lingual TTS</p>
+                                                    <p>With Multi-lingual TTS, it provides a same tone of voice of receptionist in foreign languages, such as English, Japanese, and Chinese.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Device</p>
+                                                    <p>It can be applied to multiple devices such as smartphone, website, kiosk, digital signage, and robot.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Chatbot</p>
+                                                    <p>It is capable of free talking with visitors through understanding their intentions from a question and a learning tool will be provided for manager to control continuous learning of the machine.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Usage</p>
+                                                    <p>Corporate, hotel, unmanned store, and etc.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1recept.pdf" download="AI Receptionist brochure" class="btn_download eng">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="Download">
+                                            <span>Download brochure</span>
+                                        </a>
+                                    </div>
+                                    <div class="box">
+                                        <div class="swiper-container job07">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_banker01.png" alt="Banker">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_banker02.png" alt="Banker">
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <img src="./resource/img/img_banker03.png" alt="Banker">
+                                                </li>
+                                            </ul>
+                                            <div class="swiper-paging"></div>
+                                        </div>
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <strong>Banker</strong>
+                                                <span>M1-Banker</span>
+                                            </div>
+                                            <p class="desc_sub_tit eng">
+                                                It provides a guidance for customers to find the most appropriate section through understanding their visiting purposes.
+                                            </p>
+                                            <ul class="desc_txt">
+                                                <li>
+                                                    <p>4K resolution</p>
+                                                    <p>Provides AI Human in 4K quality resolution</p>
+                                                </li>
+                                                <li>
+                                                    <p>Body temperature check</p>
+                                                    <p>Checks a body temperature of visiting customers.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Customer recognition</p>
+                                                    <p>Expose advertisement while it is in standby, and recognize customers when they are close.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Greetings</p>
+                                                    <p>Recognizes a customer with its recognition camera and greets them.</p>
+                                                </li>
+                                                <li>
+                                                    <p>conversation management and understanding of customer intention (banking)</p>
+                                                    <p>Guides customers to each counter and gives them a waiting ticket.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Provides information service</p>
+                                                    <p>Calls staffs with public API, provides diverse information services such as exchange rates and weather information.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./resource/download/m1banker.pdf" download="AI Banker brochure" class="btn_download eng">
+                                            <img src="./resource/img/ico_download_24px.svg" alt="Download">
+                                            <span>Download brochure</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-container jobList eng">
+                                    <ul class="job_cnt list swiper-wrapper">
+                                        <li class="active swiper-slide">
+                                            <input type="radio" class="btn_select" value="Docent">
+                                            <img src="./resource/img/ico_docent.svg" alt="Docent">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>Docent</strong>
+                                                    <span>M1_Docent</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    It curates to explain art works and guide exhibition hall to visitors.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Customer Service Agent">
+                                            <img src="./resource/img/ico_CS.svg" alt="Customer Service Agent">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>Customer Service Agent</strong>
+                                                    <span>M1_Agent</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    It reduces costs of running call center and manages a content of customer calls.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Stenographer">
+                                            <img src="./resource/img/ico_shorthand.svg" alt="Stenographer">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>Stenographer</strong>
+                                                    <span>M1_Minutes</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    It precisely separates multiple speakers to record and share speeches of each person in a real-time.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Security guard">
+                                            <img src="./resource/img/ico_guard.svg" alt="Security guard">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>Security guard</strong>
+                                                    <span>M1_Cop</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    It identifies abnormal activities and prevents voice phishing. It is capable to be applied to overall security field. 
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Announcer">
+                                            <img src="./resource/img/ico_announcer.svg" alt="Announcer">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>Announcer</strong>
+                                                    <span>M1_Ann</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    It replicates voice and tones of announcer and speaks perfect phonological phenomenon of Korean.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Receptionist">
+                                            <img src="./resource/img/ico_receptionist.svg" alt="Receptionist">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>Receptionist</strong>
+                                                    <span>M1-Recept</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    It greets visitors and provides guidance for them to do their works.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Banker">
+                                            <img src="./resource/img/ico_banker.svg" alt="Banker">
+                                            <div class="desc_area">
+                                                <div class="desc_tit">
+                                                    <strong>Banker</strong>
+                                                    <span>M1-Banker</span>
+                                                </div>
+                                                <p class="desc_sub_tit">
+                                                    It provides a guidance for customers to find the most appropriate section through understanding their visiting purposes.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="page"></div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn_next eng">STEP 1 complete</button>
+                        </div>
+                        <div class="cont who eng">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 2</span>
+                                    <strong>WHO</strong>
+                                </h2>
+                                <span>Select AI human model.</span>
+                            </div>
+                            <div class="select_area">
+                                <div class="who_cnt eng">
+                                    <div class="box active">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>See cases of application</span>
+                                        </button>
+                                        <img src="./resource/img/img_jeong.png" alt="Jeong Sora">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>Jeong Sora</p>
+                                                <p style="display:none;">정소라</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>KBS reporter for “Window of North and South”</li>
+                                                <li>SBS CNBC anchor for “Professional Big League”</li>
+                                                <li>MC of Hanryu intellectual property rights symposium hosted by Trade committee under Ministry of Trade and Industry</li>
+                                                <li>MC of smart city design contest hosted by Ministry of Science</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>See cases of application</span>
+                                        </button>
+                                        <img src="./resource/img/img_you.png" alt="You Seungmin">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>You Seungmin</p>
+                                                <p style="display:none;">유승민</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>Mc of SK corporate broadcast</li>
+                                                <li>Announcer for Committee 24 of the local broadcasting</li>
+                                                <li>Dlive panel</li>
+                                                <li>YTN Science MC reporter and etc.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>See cases of application</span>
+                                        </button>
+                                        <img src="./resource/img/img_lee.png" alt="Lee Changjin">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>Lee Changjin</p>
+                                                <p style="display:none;">이창진</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>Corporate broadcasting of SK group</li>
+                                                <li>KBS Window of North and South</li>
+                                                <li>Announcer of Maeil Business TV</li>
+                                                <li>MC of international cancer seminat and etc.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>See cases of application</span>
+                                        </button>
+                                        <img src="./resource/img/img_song.png" alt="Song Jieun">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>Song Jieun</p>
+                                                <p style="display:none;">송지은</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>News anchor for SK Broadband</li>
+                                                <li>Announcer for SK group’s corporate broadcasting</li>
+                                                <li>Announcer for Hanhwa Life’s corporate broadcasting</li>
+                                                <li>Advertisement for the installment sale of Hill State apartment and etc.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>See cases of application</span>
+                                        </button>
+                                        <img src="./resource/img/img_min.png" alt="Min Kyeongsu">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>Min Kyeongsu</p>
+                                                <p style="display:none;">민경수</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>Sports caster for SPOTV</li>
+                                                <li>Official MC for KBC Gwangju</li>
+                                                <li>Anchor for Hankyung TV financial broadcasting</li>
+                                                <li>MC for 3 consecutive years at AIA Lift insurance company’s award ceremony</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>See cases of application</span>
+                                        </button>
+                                        <img src="./resource/img/img_park.png" alt="Park Cheolmin">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>Park Cheolmin</p>
+                                                <p style="display:none;">박철민</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>Anchor for YTN SCIENCE</li>
+                                                <li>Reporter and anchor for TBS</li>
+                                                <li>6th class MBC TV actor/actress</li>
+                                                <li>MC for Post Corona Conference hosted by Ministry of Land, Infrastructure, and Transport</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <button type="button" class="btn_video">
+                                            <img src="./resource/img/ico_preview.svg" alt="">
+                                            <span>See cases of application</span>
+                                        </button>
+                                        <img src="./resource/img/img_yoon.png" alt="Yoon Yesung">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>Yoon Yesung</p>
+                                                <p style="display:none;">윤예성</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>Completed level 1 and 2 course of Kushi Macrobiotic Japan</li>
+                                                <li>Completed 11th class of food life education activist cultivation course</li>
+                                                <li>Completed 10th class of Parental lecturer cultivation course for food life education hosted by Seoul City government</li>
+                                                <li>Current lecturer for macrobiotic</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <img src="./resource/img/img_voice.png" alt="Voice Model">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>Voice Model</p>
+                                                <p style="display:none;">목소리 모델만 사용</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>A suitable voice for diverse contents can be used such as a voice of Internet streamer, announcer, and a character.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <img src="./resource/img/img_silhouette.png" alt="AI Human Order">
+                                        <div class="desc_area">
+                                            <div class="desc_tit">
+                                                <p>AI Human Order</p>
+                                                <p style="display:none;">AI 휴먼 제작</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                            <ul>
+                                                <li>You can build your own AI Human.</li>
+                                                <li>AI Human professor, weathercaster, announcer, lecturer, and etc. AI Human can be applied to diverse set of professions.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-container whoList eng">
+                                    <ul class="who_cnt list swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Jeong Sora">
+                                            <img src="./resource/img/img_jeong_cir.png" alt="Jeong Sora" class="active">
+                                            <div class="hover">
+                                                <p>Jeong<br>Sora</p>
+                                                <p style="display:none;">정소라</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="You Seungmin">
+                                            <img src="./resource/img/img_you_cir.png" alt="You Seungmin">
+                                            <div class="hover">
+                                                <p>You<br>Seung<br>min</p>
+                                                <p style="display:none;">유승민</p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Lee Changjin">
+                                            <img src="./resource/img/img_lee_cir.png" alt="Lee Changjin">
+                                            <div class="hover">
+                                                <p>Lee<br>Changjin</p>
+                                                <p style="display:none">이창진</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Song Jieun">
+                                            <img src="./resource/img/img_song_cir.png" alt="Song Jieun">
+                                            <div class="hover">
+                                                <p>Song<br>Jieun</p>
+                                                <p style="display:none;">송지은</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Min Kyeongsu">
+                                            <img src="./resource/img/img_min_cir.png" alt="Min Kyeongsu">
+                                            <div class="hover">
+                                                <p>Min<br>Kyeong<br>su</p>
+                                                <p style="display:none;">민경수</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Park Cheolmin">
+                                            <img src="./resource/img/img_park_cir.png" alt="Park Cheolmin">
+                                            <div class="hover">
+                                                <p>Park<br>Cheol<br>min</p>
+                                                <p style="display:none;">박철민</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Yoon Yesung">
+                                            <img src="./resource/img/img_yoon_cir.png" alt="Yoon Yesung">
+                                            <div class="hover">
+                                                <p>Yoon<br>Yesung</p>
+                                                <p style="display:none;">윤예성</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="Voice Model">
+                                            <img src="./resource/img/img_voice_cir.png" alt="Voice Model">
+                                            <div class="hover">
+                                                <p>Voice<br>Model</p>
+                                                <p style="display:none;">목소리 모델</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <input type="radio" class="btn_select" value="AI Human Order">
+                                            <img src="./resource/img/img_silhouette_cir.png" alt="AI Human Order">
+                                            <div class="hover">
+                                                <p>AI<br>Human<br>Order</p>
+                                                <p style="display:none;">AI 휴먼 제작</p>
+                                                <!-- [D] : 인물이름 한영 순서바뀜. 한국어 display:none; 스타일 추가 -->
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            <button type="button" class="btn_next eng">STEP 2 complete</button>
+                        </div>
+                        <div class="cont work eng">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 3</span>
+                                    <strong>WORK</strong>
+                                </h2>
+                                <span>Choose functions of AI Human.</span>
+                            </div>
+                            <ul class="eng">
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Customer recognition]">
+                                    Customer recognition
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[Voice recognition]">
+                                    Voice recognition
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[Voice generation]">
+                                    Voice generation
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[Consultation]">
+                                    Consultation
+                                </li>
+                                <li class="active">
+                                    <input type="checkbox" class="btn_check" value="[Greeting]">
+                                    Greeting
+                                </li>
+                                <li class="selectable">
+                                    <input type="checkbox" class="btn_check" value="[Conversation management]">
+                                    Conversation management
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Entrance control]">
+                                    Entrance control
+                                </li>
+                                <li class="disabled ftSize12">
+                                    <input type="checkbox" class="btn_check" value="[Body temperature check]">
+                                    Body temperature check
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Call a staff]">
+                                    Call a staff
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Introducing company]">
+                                    Introducing company
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Amenity guidance]">
+                                    Amenity guidance
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Introducing products]">
+                                    Introducing products
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Emergence contact]">
+                                    Emergence contact
+                                </li>
+                                <li class="disabled ftSize12">
+                                    <input type="checkbox" class="btn_check" value="[Guide for banking services]">
+                                    Guide for banking services
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Generate a meeting log]">
+                                    Generate a meeting log
+                                </li>
+                                <li class="disabled">
+                                    <input type="checkbox" class="btn_check" value="[Multilingual support]">
+                                    Multilingual support
+                                </li>
+                                <li class="disabled ftSize12">
+                                    <input type="checkbox" class="btn_check" value="[Recognizing an emergence situation]">
+                                    Recognizing an emergence situation
+                                </li>
+                            </ul>
+                            <button type="button" class="btn_next eng">STEP 3 complete</button>
+                        </div>
+                        <div class="cont display">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 4</span>
+                                    <strong>DISPLAY</strong>
+                                </h2>
+                                <span>Where do you want it to be seen?</span>
+                            </div>
+                            <div class="swiper-container displayList">
+                                <ul class="swiper-wrapper">
+                                    <li class="active swiper-slide">
+                                        <input type="radio" class="btn_select" value='Kiosk 55"'>
+                                        <p>Kiosk 55"</p>
+                                        <img src="./resource/img/ico_kiosk.svg" alt="kiosk">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="Desktop">
+                                        <p>Desktop</p>
+                                        <img src="./resource/img/ico_desktop.svg" alt="desktop">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="Tablet">
+                                        <p>Tablet</p>
+                                        <img src="./resource/img/ico_tablet.svg" alt="Tablet">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="Web">
+                                        <p>Web</p>
+                                        <img src="./resource/img/ico_web.svg" alt="Web">
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <input type="radio" class="btn_select" value="App.">
+                                        <p>App.</p>
+                                        <img src="./resource/img/ico_app.svg" alt="App.">
+                                    </li>
+                                </ul>
+                                <div class="page"></div>
+                            </div>
+                            <button type="button" class="btn_next eng">STEP 4 complete</button>
+                        </div>
+                        <div class="cont tools">
+                            <div class="tit_area">
+                                <h2>
+                                    <span>STEP 5</span>
+                                    <strong>TOOLS</strong>
+                                </h2>
+                                <span>Check out diverse functions of MINDs Lab AI Human!</span>
+                            </div>
+                            <div class="swiper-container toolsList">
+                                <ul class="swiper-wrapper">
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[VoiceBot]">
+                                        VoiceBot
+                                    </li>
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[TMQA]">
+                                        TMQA
+                                    </li>
+                                    <li class="active swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[Chatbot maker]">
+                                        Chatbot<br>maker
+                                    </li>
+                                    <li class="active swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[Edge AI]">
+                                        Edge AI
+                                    </li>
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[Maum Minutes On-device]">
+                                        Maum Minutes<br>On-device
+                                    </li>
+                                    <li class="disabled swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[Maum Minutes On-promise]">
+                                        Maum Minutes<br>On-promise
+                                    </li>
+                                    <li class="selectable swiper-slide">
+                                        <input type="checkbox" class="btn_check" value="[Cloud Maum Minutes]">
+                                        Cloud<br>Maum Minutes
+                                    </li>
+                                </ul>
+                                <div class="page"></div>
+                            </div>
+                        </div>
+                        <a href="./resource/download/m1AIHuman.pdf" download="integrated brochure" class="btn_download all eng">
+                            <img src="./resource/img/ico_download_white_24px.svg" alt="Download">
+                            <span>Download integrated brochure</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="order_cnt summary eng active">
+                    <button type="button" class="btn_close">
+                        <img src="./resource/img/ico_close.png" alt="창 닫기">
+                    </button>
+                    <div class="cont order_summary active">
+                        <div class="desc_area eng">
+                            <h3 class="desc_tit">STEP 1. Order Summary</h3>
+                            <p>Made of your AI Human.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>JOB</p>
+                                <div class="job">
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>$</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>WHO</p>
+                                <div class="who">
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>$</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>WORK</p>
+                                <div class="work">
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>$</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>DISPLAY</p>
+                                <div class="display">
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>$</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>TOOLS</p>
+                                <div class="tools">
+                                </div>
+                                <!-- [D] 22.01.18 각 항목 별 가격 확정 시 ".price"의 style 삭제해주세요. 현재 가격 미정이라 숨겨두었습니다.  -->
+                                <div class="price" style="display:none;">
+                                    <strong>0</strong>
+                                    <span>$</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn_order">Submit</button>
+                    </div>
+                    <div class="cont make_aiHuman">
+                        <button type="button" class="btn_back">
+                            <img src="./resource/img/ico_back.svg" alt="close button">
+                        </button>
+                        <div class="estimate eng">
+                            <h3>STEP 2. Estimate</h3>
+                            <div class="estimate_table">
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>Name</b>(required)
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="text" placeholder="Please fill in your name." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>Contact information</b>(required)
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="number" name="tel" class="mandantory" placeholder="Please fill in numbers only." title="연락처" maxlength="12" oninput="" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>email</b>(required)
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="email" name="email" class="mandantory" placeholder="Please fill in your email address." title="이메일" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>Company / Affiliation</b>
+                                    </div>
+                                    <div class="estimate_td eng">
+                                        <input type="text" placeholder="Please fill in a name of your company or affiliation." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="estimate_tr">
+                                    <div class="estimate_th">
+                                        <b>Available time for contact</b>
+                                    </div>
+                                    <div class="estimate_td">
+                                        <input type="text" placeholder="ex) After 7pm" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rd_area eng">
+                                <div class="rd_cont">
+                                    <input type="checkbox" id="chAgree" name="chAgreeBtn" value="chAgree" />
+                                    <label for="chAgree"><span>Agree</span></label>
+                                </div>
+                                <div>
+                                    <p>Collecting personal information : name, contact number<br>
+                                        Your personal information will be kept for 1 year for customer service purposes. You can disagree the terms, but the application won’t take into a place.</p>
+                                </div>
+                            </div>
+                            <button type="button" class="btn_order">Send estimate</button>
+                        </div>
+                    </div>
+                    <div class="float_area">
+                        <button type="button" class="btn_mail">
+                            <img src="./resource/img/ico_mail.svg" alt="mail">
+                        </button>
+                        <button type="button" class="btn_summary">
+                            <img src="./resource/img/ico_write.svg" alt="write">
+                        </button>
+                        <button type="button" class="btn_top">
+                            <img src="./resource/img/ico_top.svg" alt="top">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <!-- #footer -->
+        <div id="footerLanding" class="section" data-anchor="stn_footer">
+            <div class="ft_top">
+                <div class="footer_inner">
+                    <div class="col links fl">
+                        <a href="https://mindslab.ai:8080/kr/company" target="_blank">Company</a>
+                        <a href="https://maum.ai/home/krTermsMain" target="_blank">Terms and conditions</a>
+                        <a href="https://maum.ai/home/krTermsMain#conditions" target="_blank">Privacy policy</a>
+                    </div>
+        
+                    <div class="col contact">
+                        <a href="tel:16613222">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_phone_20.svg" alt="call">
+                            <span>1661-3222</span>
+                        </a>
+                        <br>
+                        <a href="mailto:hello@mindslab.ai">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_email_20.svg" alt="send e-mail">
+                            <span>hello@mindslab.ai</span>
+                        </a>
+                    </div>
+        
+                    <div class="col sns fr">
+                        <a href="https://www.facebook.com/mindsinsight" target="_blank" title="facebook link">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_facebook_40.svg" alt="facebook icon">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC8ocQaJFp-adzGtwcBuS3iQ?view_as=subscriber" target="_blank" title="YouTube link">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_youtube_40.svg" alt="YouTube icon">
+                        </a>
+                        <a href="https://post.naver.com/my.nhn?memberNo=45704243" target="_blank" title="naver blog link">
+                            <img src="https://maum.ai/aiaas/kr/images/landing/ico_blog_40.svg" alt="naver blog icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft_btm">
+                <div class="footer_inner">
+                    <div class="col company fl">
+                        <address>
+                            <span>CEO Teajun Yoo |</span>
+                            <span>corporate registration numbe 314-86-55446 |</span>
+                            <span>Mail-Order Business Report Number 2019-대전유성-0094</span><br>
+                            <span>(5-6F 49, Daewangpangyo-ro 644beon-gil, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</span>
+                        </address>
+                        <p class="copyright">
+                            Copyright © 2022 MINDsLab. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //#footer -->
+        <!-- 동영상 모달 -->
+        <div class="video_area">
+            <div class="video_cnt">
+                <button type="button">
+                    <img src="./resource/img/ico_close_Bcircle.svg" alt="close button">
+                </button>
+                <video autoplay controls muted playsinline></video>
+            </div>
+        </div>
+    </div>
+    <!-- //#wrap -->
+
+    <script type="text/javascript" src="resource/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="resource/js/jquery.easing.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script type="text/javascript" src="resource/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="사각형_483" data-name="사각형 483" transform="translate(.437 -.478)" style="fill:#451010" d="M0 0h30v30H0z"/>
+        </clipPath>
+        <style>
+            .cls-3{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}
+        </style>
+    </defs>
+    <g id="ico_close_Bcircle" transform="translate(-.437 .478)" style="clip-path:url(#clip-path)">
+        <rect id="사각형_486" data-name="사각형 486" width="30" height="30" rx="15" transform="translate(.436 -.478)"/>
+        <g id="그룹_367" data-name="그룹 367" transform="translate(10.437 9.522)">
+            <path id="패스_12546" data-name="패스 12546" class="cls-3" d="M0 14.142V0" transform="rotate(45 5 12.071)"/>
+            <path id="패스_12547" data-name="패스 12547" class="cls-3" d="M0 14.142V0" transform="rotate(135 2.929 7.071)"/>
+        </g>
+    </g>
+</svg>
